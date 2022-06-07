@@ -25,7 +25,7 @@ int main(void)
 				{
 					for (i = 48; i <= 57; i++)
 					{
-					if (l <= h && o < i)
+					if ((l <= h && o <= i) && !(l == h && o == i))
 					{
 					putchar(l);
 					putchar(o);
