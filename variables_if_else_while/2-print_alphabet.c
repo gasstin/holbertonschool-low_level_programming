@@ -11,7 +11,7 @@
 int main(void)
 {
 	int l;
-	
+
 
 	for (l = 'a'; l <= 'z'; l++)
 	{
