@@ -8,13 +8,12 @@
  */
 int _islower(int c)
 {
-	if ((c >= 61) && (c <= 122))
+	if ((c >= 97) && (c <= 122))
 	{
-		_putchar('1');
+		return (1);
 	}
 	else
 	{
-		_putchar('0');
+		return (0);
 	}
-	return (0);
 }
