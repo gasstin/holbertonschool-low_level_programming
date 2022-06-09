@@ -22,18 +22,18 @@ void times_table(void)
 			_putchar (32);
 		}
 		if (o < 10)
-                {
-                	if (m != 0)
+		{
+			if (m != 0)
 			{
 			_putchar (32);
 			}
 			_putchar (o + '0');
-                }
-                else
-                {
-                        _putchar ((o / 10) + '0');
-                        _putchar ((o % 10) + '0');
-                }
+		}
+		else
+		{
+			_putchar ((o / 10) + '0');
+			_putchar ((o % 10) + '0');
+		}
 		}
 		_putchar ('\n');
 	}
