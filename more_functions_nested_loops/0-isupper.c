@@ -1,0 +1,19 @@
+# include "main.h"
+
+/**
+ * _isupper - check if c is uppercase
+ * @c: is a variable
+ *
+ * Return: Always 0.
+ */
+int _isupper(int c)
+{
+	if ((c >= 41) && (c <= 90))
+	{
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
+}
