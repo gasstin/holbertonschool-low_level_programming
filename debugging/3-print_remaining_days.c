@@ -19,13 +19,14 @@ void print_remaining_days(int month, int day, int year)
 			day++;
 		}
 
-	printf("Day of the year: %d\n", day);
 	if (year == 2000)
 	{
+		printf("Day of the year: %d\n", day - 1);
 		printf("Remaining days: %d\n", 367 - day);
 	}
 	else
 	{
+		printf("Day of the year: %d\n", day);
 		printf("Remaining days: %d\n", 366 - day);
 	}
 	}
