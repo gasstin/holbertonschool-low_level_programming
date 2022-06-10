@@ -1,7 +1,7 @@
 # include "main.h"
 
 /**
- * print_diagonal - Write a function that draws a straight line in the terminal.
+ * print_diagonal - Write a function that draws a straight line in the terminal
  * @n: is the number of times
  *
  * Return: Always 0.
