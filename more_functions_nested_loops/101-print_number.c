@@ -1,7 +1,7 @@
 # include "main.h"
 
 /**
- * print_number - prints numbers from 0 to 9 less 2 and 4
+ * print_number - prints the integer n
  * @n: is a variable
  *
  * Return: Always 0.
@@ -21,6 +21,10 @@ void print_number(int n)
 			_putchar (-n % 10 + '0');
 		}
 	}
+	else if
+	{
+		_putchar('0');
+	}
 	else if ((n / 10) == 0 && (n % 10 != 0) && (n >= 0))
 	{
 		_putchar (n % 10 + '0');
@@ -29,5 +33,5 @@ void print_number(int n)
 	{
 		_putchar (45);
 		_putchar (-n % 10 + '0');
-	}	
+	}
 }
