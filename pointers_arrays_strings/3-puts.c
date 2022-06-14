@@ -2,7 +2,7 @@
 # include <stdio.h>
 
 /**
- * _puts - Write a function that prints a string, 
+ * _puts - Write a function that prints a string,
  * followed by a new line, to stdout.
  * @str: is the string
  *
@@ -18,6 +18,6 @@ void _puts(char *str)
 		_putchar (str[i]);
 		i++;
 	}
-	
+
 	_putchar ('\n');
 }
