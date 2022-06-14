@@ -1,1 +1,1 @@
-repo for C´s projects
+In this project I'll learn about pointers, arrays and strings
