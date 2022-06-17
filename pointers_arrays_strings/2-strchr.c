@@ -17,7 +17,10 @@ char *_strchr(char *s, char c)
 		if (*s == c)
 			break;
 		else if (!*s)
+		{
 			s = NULL;
+			break;
+		}
 		s++;
 	}
 	return (s);
