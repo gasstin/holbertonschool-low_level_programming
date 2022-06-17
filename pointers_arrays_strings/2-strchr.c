@@ -15,7 +15,7 @@ char *_strchr(char *s, char c)
 	{
 		s++;
 	}
-	if (s == NULL)
+	if (!(*s == c))
 		s = NULL;
 	return (s);
 }
