@@ -5,6 +5,7 @@
  * print_diagsums - Write a function that prints
  * the sum of the two diagonals of a square matrix of integers.
  * @size: is the size of the array
+ * @a: is the array
  *
  * Return: Always 0.
  */
