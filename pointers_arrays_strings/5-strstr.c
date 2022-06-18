@@ -38,7 +38,7 @@ char *_strstr(char *haystack, char *needle)
 				break;
 		}
 	}
-	if (*haystack)
+	if (m == l)
 		return (haystack);
 	else
 		return ('\0');
