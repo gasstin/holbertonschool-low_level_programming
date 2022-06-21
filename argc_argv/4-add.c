@@ -23,9 +23,9 @@ int main(int argc, char *argv[])
 			{
 				if (argv[n][m] > 57 || argv[n][m] < 48)
 				{
+					return (1);
 					printf("Error\n");
 					break;
-					return (1);
 				}
 			}
 			add += atoi(argv[n]);
