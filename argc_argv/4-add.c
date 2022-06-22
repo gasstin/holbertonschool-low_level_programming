@@ -23,12 +23,17 @@ int main(int argc, char *argv[])
 			{
 				if (argv[n][m] > 57 || argv[n][m] < 48)
 				{
-					break;
 					aux = 1;
+					break;
 				}
 			
 			}
-			add += atoi(argv[n]);
+		if (aux == 1)
+		{
+			printf("Error/n");
+			return (aux);
+		}
+		add += atoi(argv[n]);
 		}
 		printf("%d\n", add);
 		return (0);
@@ -37,10 +42,5 @@ int main(int argc, char *argv[])
 	{
 		printf("0\n");
 		return (0);
-	}
-	if (aux == 1)
-	{
-		printf("Error/n");
-		return (aux);
 	}
 }
