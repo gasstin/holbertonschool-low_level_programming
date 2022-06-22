@@ -23,8 +23,8 @@ int main(int argc, char *argv[])
 			{
 				if (argv[n][m] > 57 || argv[n][m] < 48)
 				{
-					aux = 1;
 					break;
+					aux = 1;
 				}
 			
 			}
