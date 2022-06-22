@@ -26,7 +26,6 @@ int main(int argc, char *argv[])
 					aux = 1;
 					break;
 				}
-			
 			}
 		if (aux == 1)
 		{
