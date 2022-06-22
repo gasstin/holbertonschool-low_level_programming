@@ -13,7 +13,7 @@
 
 int main(int argc, char *argv[])
 {
-	int n = 0, m = 0, add = 0;
+	int n = 0, m = 0, aux = 0, add = 0;
 
 	if (argc > 1)
 	{
@@ -23,8 +23,7 @@ int main(int argc, char *argv[])
 			{
 				if (argv[n][m] > 57 || argv[n][m] < 48)
 				{
-					printf("Error\n");
-					return (1);
+					aux = 1;
 					break;
 				}
 			
@@ -34,9 +33,14 @@ int main(int argc, char *argv[])
 		printf("%d\n", add);
 		return (0);
 	}
-	else
+	else if
 	{
 		printf("0\n");
 		return (0);
+	}
+	else if (aux)
+	{
+		printf("Error/n");
+		return (aux);
 	}
 }
