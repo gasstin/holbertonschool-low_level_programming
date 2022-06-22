@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
 		printf("0\n");
 		return (0);
 	}
-	if (aux)
+	if (aux == 1)
 	{
 		printf("Error/n");
 		return (aux);
