@@ -15,9 +15,9 @@ char *str_concat(char *s1, char *s2)
 	int n = 0, m = 0, a, b;
 
 	if (s1 == NULL)
-		p = s2;
+		return (s2);
 	else if (s2 == NULL)
-		p = s1;
+		return (s1);
 	else if (s1 && s2)
 	{
 		while (*(s1 + n))
