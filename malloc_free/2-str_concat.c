@@ -35,4 +35,5 @@ char *str_concat(char *s1, char *s2)
 			p[n + b] = s2[b];
 		return (p);
 	}
+	return (0);
 }
