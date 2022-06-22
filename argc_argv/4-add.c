@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 			}
 		if (aux == 1)
 		{
-			printf("Error/n");
+			printf("Error\n");
 			return (aux);
 		}
 		add += atoi(argv[n]);
