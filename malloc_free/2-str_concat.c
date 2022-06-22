@@ -14,12 +14,6 @@ char *str_concat(char *s1, char *s2)
 	char *p;
 	int n = 0, m = 0, a, b;
 
-	if (s1 == NULL)
-		return (s2);
-	else if (s2 == NULL)
-		return (s1);
-	else if (s1 && s2)
-	{
 		while (*(s1 + n))
 			n++;
 		while (*(s2 + m))
@@ -34,6 +28,4 @@ char *str_concat(char *s1, char *s2)
 		for (b = 0; b < m; b++)
 			p[n + b] = s2[b];
 		return (p);
-	}
-	return (0);
 }
