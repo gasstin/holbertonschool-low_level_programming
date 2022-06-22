@@ -33,12 +33,12 @@ int main(int argc, char *argv[])
 		printf("%d\n", add);
 		return (0);
 	}
-	else if
+	else
 	{
 		printf("0\n");
 		return (0);
 	}
-	else if (aux)
+	if (aux)
 	{
 		printf("Error/n");
 		return (aux);
