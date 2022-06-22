@@ -13,19 +13,26 @@
 
 int main(int argc, char *argv[])
 {
-	int n = 0, add = 0;
+	int n = 0, m = 0, aux = 0, add = 0;
 
 	if (argc > 1)
 	{
 		for (n = 1; n < argc; n++)
 		{
-			if (atoi(argv[n]))
-				add += atoi(argv[n]);
-			else
+			for (m = 0; argv[n][m]; m++)
 			{
-				printf("Error\n");
-				return (1);
+				if (argv[n][m] > 57 || argv[n][m] < 48)
+				{
+					aux = 1;
+					break;
+				}
 			}
+		if (aux == 1)
+		{
+			printf("Error\n");
+			return (aux);
+		}
+		add += atoi(argv[n]);
 		}
 		printf("%d\n", add);
 		return (0);
