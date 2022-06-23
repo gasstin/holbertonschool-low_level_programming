@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#define EXIT_SUCCES 0
 #define EXIT_FAILURE 98
 
 /**
