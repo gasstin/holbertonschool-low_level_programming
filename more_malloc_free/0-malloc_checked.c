@@ -1,11 +1,12 @@
 #include "main.h"
 #include <stdlib.h>
+#define EXIT_FAILURE 98
 
 /**
- * _strdup - Write a function that returns a pointer
+ * malloc_checked - Write a function that returns a pointer
  * to a newly allocated space in memory,
  * which contains a copy of the string given as a parameter.
- * @str: is the string to copy
+ * @b: is the size of memory 
  *
  * Return: Always 0.
  */
