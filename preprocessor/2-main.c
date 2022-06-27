@@ -2,8 +2,7 @@
 #include <stdlib.h>
 
 /**
- * malloc_checked - Write a function that allocates memory
- * @b: are the bytes to pass to malloc
+ * main - Write a program that prints the name of the file it was compiled from
  *
  * Return: Always 0
  */
