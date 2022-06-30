@@ -3,17 +3,17 @@
 #include <string.h>
 
 /**
- * main - write a program that performs simple operations.
- * as a parameter on each element of an array
- * @argc: is the number of arguments.
+ * main - write a program that prints the opcodes
+ * of its own main function.
+ * @argc: is the number of bytes.
  * @argv: is the arguments's vector
  *
  * Return: On success 0.
  */
 
-int main(int argc, char *argv[])
+char main(int argc, char *argv[])
 {
-	int (*f)(int, char **);
+	char (*f)(int, char **);
 	int n = 0;
 
 	f = &main;
@@ -30,7 +30,11 @@ int main(int argc, char *argv[])
 		exit(2);
 	}
 	for (n = 0; n <= atoi(argv[1]); n++)
-		printf("%x ", *((int *)f++));
+	{
+		printf("%02x", *((char *)f++));
+		if (n != atoi(argv[1]))
+			printf(" ");
+	}
 	printf("\n");
 
 	return (0);
