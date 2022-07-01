@@ -1,9 +1,10 @@
 CC = gcc
 SRC = main.c school.c
 
-all: school
+all : school
+.PHONY : all
 
-school: $(SRC)
+school : $(SRC)
 	$(CC) $(SRC) -o school
-clean:
-	rm -f school *.o
+clean :
+	rm -f *.o
