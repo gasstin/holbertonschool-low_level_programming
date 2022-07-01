@@ -5,9 +5,3 @@ NAME = school
 
 all: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
-main.o: main.c m.h
-	gcc -c main.c -o main.o
-school.o: school.c m.h
-	gcc -c school.c -o school.o
-clean :
-	rm -f *.o
