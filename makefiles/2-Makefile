@@ -5,4 +5,6 @@ NAME = school
 
 all: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
+	
+prog1: $(SRC)
 	$(CC) -c $(SRC)
