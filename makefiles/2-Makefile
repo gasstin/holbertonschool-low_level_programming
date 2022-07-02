@@ -5,6 +5,7 @@ NAME =  school
 
 all: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
+	$(CC) $(OBJ) -o school
 
 %.o: %.c m.h
 	$(CC) -c $< -o $@
