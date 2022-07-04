@@ -6,7 +6,6 @@ CFLAGS = -Wall -Werror -Wextra -pedantic
 
 all: $(OBJ)
 	$(CC) -I $(OBJ) -o $(NAME)
-	gcc -I $(OBJ) -o holberton
 
 clean:
 	$(RM) $(NAME) *~
