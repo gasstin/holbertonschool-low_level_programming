@@ -5,7 +5,9 @@ NAME = school
 CFLAGS = -Wall -Werror -Wextra -pedantic
 HEADER = m.h
 
-test: m.h
+ifneq ($(shell test -e m.h && echo yes),)
+	$(error Error)
+endif
 
 all: $(OBJ)
 	$(CC)  $(OBJ) -o $(NAME)
