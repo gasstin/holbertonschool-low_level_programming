@@ -5,8 +5,11 @@ NAME = school
 CFLAGS = -Wall -Werror -Wextra -pedantic
 HEADER = m.h
 
-ifeq ($(HEADER),m.h)
-all: $(OBJ) m.h
+test:
+	if [-e m.h] ; then \
+		echo "Error Message"; false; \
+	fi;
+all: $(OBJ)
 	$(CC)  $(OBJ) -o $(NAME)
 
 .PHONY: clean
