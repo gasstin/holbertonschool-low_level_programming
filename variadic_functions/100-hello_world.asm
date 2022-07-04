@@ -1,16 +1,16 @@
-section .data
-    msg db "Hello world!",10
+global main
 
-section .text
-    global _start
+extern printf
 
-_start:
-    mov rax, 1
-    mov rdi, 1
-    mov rsi, msg
-    mov rdx, 13
-    syscall
-    
-    mov rax, 60
-    mov rdi, 0
-    syscall
+SECTION .data
+hello           db  "Hello World!", 10, 0   ; const char *
+hello_len       equ $ - hello               ; size_t
+
+SECTION .text
+
+main:
+    ; return printf(hello) - hello_len;
+    lea     rdi, [hello]
+    xor     rax, rax
+    call    printf
+    sub     rax, hello_len
