@@ -1,16 +1,16 @@
-global main
+section	.text
+   global _start     ;must be declared for linker (ld)
+	
+_start:	            ;tells linker entry point
+   mov	edx,len     ;message length
+   mov	ecx,msg     ;message to write
+   mov	ebx,1       ;file descriptor (stdout)
+   mov	eax,4       ;system call number (sys_write)
+   int	0x80        ;call kernel
+	
+   mov	eax,1       ;system call number (sys_exit)
+   int	0x80        ;call kernel
 
-extern printf
-
-SECTION .data
-hello           db  "Hello World!", 10, 0   ; const char *
-hello_len       equ $ - hello               ; size_t
-
-SECTION .text
-
-main:
-    ; return printf(hello) - hello_len;
-    lea     rdi, [hello]
-    xor     rax, rax
-    call    printf
-    sub     rax, hello_len
+section	.data
+msg db 'Hello, world!', 0xa  ;string to be printed
+len equ $ - msg     ;length of the string
