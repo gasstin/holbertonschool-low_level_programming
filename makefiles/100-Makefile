@@ -3,11 +3,11 @@ SRC = main.c school.c
 OBJ = $(SRC:.c=.o)
 NAME = school
 CFLAGS = -Wall -Werror -Wextra -pedantic
-ERR = $(error 1)
+ERR = $(error 0)
 
-.PHONY : clean oclean fclean re err
+.PHONY : clean oclean fclean err
 all: $(OBJ)
-	$(CC)  $(OBJ) -o $(NAME)
+	$(CC)  $(OBJ) $(ERR) -o $(NAME)
 
 clean:
 	$(RM) -f $(NAME) *~
