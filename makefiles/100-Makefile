@@ -5,7 +5,7 @@ NAME = school
 CFLAGS = -Wall -Werror -Wextra -pedantic
 
 all: $(OBJ)
-	$(CC) -I $(OBJ) -o $(NAME) school
+	$(CC) -I $(OBJ) -o $(NAME)
 
 clean:
 	$(RM) $(NAME) *~
