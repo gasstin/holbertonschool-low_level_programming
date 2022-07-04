@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * natural - prints the 9 times table
+ * main - find the multiples of 3 and 5 and sum them
  *
  * Return: the sum of all multiples
  */
