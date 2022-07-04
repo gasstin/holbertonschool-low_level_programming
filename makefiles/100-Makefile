@@ -1,12 +1,12 @@
 CC = gcc
 SRC = main.c school.c
-OBJ = $(SRC:.c=.o) : m.h
+OBJ = $(SRC:.c=.o)
 NAME = school
 CFLAGS = -Wall -Werror -Wextra -pedantic
 HEADER = m.h
 
 ifeq ($(HEADER),m.h)
-all: $(OBJ)
+all: $(OBJ) m.h
 	$(CC)  $(OBJ) -o $(NAME)
 
 .PHONY: clean
