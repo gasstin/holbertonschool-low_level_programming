@@ -19,7 +19,6 @@ int main(void)
 		if (m != 0)
 			printf(", ");
 		printf("%d", sig);
-		}
 		m++;
 	}
 	printf("\n");
