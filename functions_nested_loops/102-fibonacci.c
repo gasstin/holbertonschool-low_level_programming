@@ -9,7 +9,7 @@
  */
 int main(void)
 {
-	unsigned int m = 0, sig = 0, ant_I = 0, ant_II = 1;
+	unsigned long m = 0, sig = 0, ant_I = 0, ant_II = 1;
 
 	while (m != 50)
 	{
