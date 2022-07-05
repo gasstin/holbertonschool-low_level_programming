@@ -16,13 +16,9 @@ int main(void)
 		sig = ant_I + ant_II;
 		ant_I = ant_II;
 		ant_II = sig;
-		if ((sig / 10) == 1 || (sig / 10) == 2
-			|| (sig / 100) == 1 || (sig / 100) == 2
-			|| (sig / 1) == 1 || (sig / 1) == 2)
-		{
-			if (m != 0)
-				printf(", ");
-			printf("%d", sig);
+		if (m != 0)
+			printf(", ");
+		printf("%d", sig);
 		}
 		m++;
 	}
