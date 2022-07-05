@@ -18,7 +18,7 @@ int main(void)
 		ant_II = sig;
 		if (m != 0)
 			printf(", ");
-		printf("%d", sig);
+		printf("%ld", sig);
 		m++;
 	}
 	printf("\n");
