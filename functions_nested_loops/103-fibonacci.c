@@ -13,12 +13,13 @@ int main(void)
 
 	while (m != 50)
 	{
-		if (sum >= 4000000)
-			break;
 		sig = ant_I + ant_II;
 		ant_I = ant_II;
 		ant_II = sig;
-		sum += sig;
+		if (sum >= 400000)
+			break;
+		else
+			sum += sig;
 		m++;
 	}
 	printf("%ld\n", sum);
