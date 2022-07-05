@@ -1,0 +1,31 @@
+#include "main.h"
+#include <stdio.h>
+
+/**
+ * main - Write a program that prints the first
+ * 50 Fibonacci numbers, starting with 1 and 2.
+ *
+ * Return: the sum of all multiples
+ */
+int main(void)
+{
+	int m = 0, sig = 0, ant_I = 0, ant_II = 1;
+
+	while (m != 50)
+	{
+		sig = ant_I + ant_II;
+		ant_I = ant_II;
+		ant_II = sig;
+		if ((sig / 10) == 1 || (sig / 10) == 2
+			|| (sig / 100) == 1 || (sig / 100) == 2
+			|| (sig / 1) == 1 || (sig / 1) == 2)
+		{
+			if (m != 0)
+				printf(", ");
+			printf("%d", sig);
+		}
+		m++;
+	}
+	printf("\n");
+	return (0);
+}
