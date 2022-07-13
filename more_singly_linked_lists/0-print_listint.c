@@ -15,14 +15,14 @@ size_t print_listint(const listint_t *h)
 	const listint_t *paux = h;
 	size_t m = 0;
 
-	while (paux)
+	if (h)
 	{
-		if (paux->n)
+		while (paux)
+		{
 			printf("%d\n", paux->n);
-		else
-			printf("[0] (nil)\n");
-		m++;
-		paux = paux->next;
+			m++;
+			paux = paux->next;
+		}
 	}
 	return (m);
 }
