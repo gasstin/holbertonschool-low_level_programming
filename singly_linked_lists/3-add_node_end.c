@@ -28,11 +28,11 @@ list_t *add_node_end(list_t **head, const char *str)
 		else
 		{
 			end = paux;
-			*head = paux; 
+			*head = paux;
 		}
 		paux->str = strdup(str);
-                paux->len = strlen(str);
-                paux->next = NULL;
+		paux->len = strlen(str);
+		paux->next = NULL;
 		return (end);
 	}
 	return (NULL);
