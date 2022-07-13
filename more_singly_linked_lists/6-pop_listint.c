@@ -8,14 +8,14 @@
  * of a listint_t linked list and returns the head node’s data (n).
  * @head: is the new head of the list.
  *
- * Return: the address of the new element, or NULL if failed
+ * Return: 0 if the linked list is empty.
  */
 int pop_listint(listint_t **head)
 {
 	listint_t *paux = NULL;
 	int m = 0;
 
-	if (head)
+	if (*head)
 	{
 		paux = *head;
 		m = (*head)->n;
