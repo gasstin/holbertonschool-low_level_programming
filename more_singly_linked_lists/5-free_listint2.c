@@ -31,7 +31,8 @@ void free_listint(listint_t *head)
  */
 void free_listint2(listint_t **head)
 {
-	free_listint(*head);
+	if (head)
+		free_listint(*head);
 	*head = NULL;
 }
 
