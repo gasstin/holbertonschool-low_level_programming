@@ -22,11 +22,10 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 		{
 			paux = paux->next;
 			m++;
+			if (!paux)
+				return (NULL);
 		}
-		if (paux->next)
-			return (paux);
-		else
-			return (NULL);
+		return (paux);
 	}
 	return (NULL);
 }
