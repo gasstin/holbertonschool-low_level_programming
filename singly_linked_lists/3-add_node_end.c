@@ -31,9 +31,14 @@ list_t *add_node_end(list_t **head, const char *str)
 			*head = paux;
 		}
 		paux->str = strdup(str);
-		paux->len = strlen(str);
-		paux->next = NULL;
-		return (end);
+		if (paux->str)
+		{
+			paux->len = strlen(str);
+			paux->next = NULL;
+			return (end);
+		}
+		free(strdup(str));
+		free(paux->str);
 	}
 	return (NULL);
 }
