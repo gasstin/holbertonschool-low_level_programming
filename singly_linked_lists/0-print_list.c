@@ -12,11 +12,8 @@
  */
 size_t print_list(const list_t *h)
 {
-	const list_t *paux = NULL;
+	const list_t *paux = h;
 	size_t n = 0;
-
-	paux = malloc(sizeof(list_t));
-	paux = h;
 
 	while (paux)
 	{
