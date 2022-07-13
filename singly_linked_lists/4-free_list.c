@@ -20,4 +20,5 @@ void free_list(list_t *head)
 		free(paux->str);
 		free(paux);
 	}
+	free(head);
 }
