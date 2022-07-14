@@ -18,9 +18,10 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	listint_t *paux = *head;
 	listint_t *paux_ant = *head;
 	listint_t *paux_pos = NULL;
-/*	int l = 0;*/
 	unsigned int m = 0;
 
+	if (!*head)
+		return (-1);
 	if (index)
 	{
 		while (m != (index - 1))
