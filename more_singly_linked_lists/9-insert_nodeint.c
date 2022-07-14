@@ -33,13 +33,13 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	new = malloc(sizeof(listint_t));
 	if (!new)
 		return (NULL);
+	if (!idx)
+		*head = new; /* cambio el head al node new*/
 	if (!paux)
 		paux = new;
 	else
 		paux->next = new;
 	new->n = n; /*agrego el nuevo n*/
 	new->next = paux_2; /*apunto el node new al puntero auxiliar 2*/
-	if (!idx)
-		*head = new; /*cambio el head al node new*/
 	return (new);
 }
