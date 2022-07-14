@@ -20,7 +20,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	listint_t *new = NULL;
 	unsigned int m = 0;
 
-		while (m != idx && idx)
+		while (idx && m != (idx - 1))
 		{
 			paux = paux->next;
 			paux_2 = paux_2->next;
@@ -28,12 +28,18 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 			if (!paux)
 				return (NULL);
 		}
+	if (paux_2)
 		paux_2 = paux_2->next;
-		new = malloc(sizeof(listint_t));
-		if (!new)
-			return (NULL);
+	new = malloc(sizeof(listint_t));
+	if (!new)
+		return (NULL);
+	if (!paux)
+		paux = new;
+	else
 		paux->next = new;
-		new->n = n; /*agrego el nuevo n*/
-		new->next = paux_2; /*apunto el node new al puntero auxiliar 2*/
-		return (new);
+	new->n = n; /*agrego el nuevo n*/
+	new->next = paux_2; /*apunto el node new al puntero auxiliar 2*/
+	if (!idx)
+		*head = new; /*cambio el head al node new*/
+	return (new);
 }
