@@ -15,6 +15,7 @@
 size_t free_listint_safe(listint_t **h)
 {
 	size_t m = 0;
+
 	if (h)
 	{
 		m = listint_len(*h);
