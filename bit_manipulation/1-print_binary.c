@@ -11,13 +11,11 @@
 
 void print_binary(unsigned long int n)
 {
-	int i = 10;
-
-	for (; i > 0; i--)
-	{
-		if ((n & (1 << i)))
-			break;
-	}
-	for (; i >= 0; i--)
-		_putchar(((n & (1 << i)) >> i) + 48);
+	if (n > 1)
+		print_binary(n >> 1);
+	if (n & 1)
+		_putchar('1');
+	else
+		_putchar ('0');
 }
+
