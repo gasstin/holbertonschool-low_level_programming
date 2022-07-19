@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
- * binary_ti_unit - Write a function that converts a binary number
+ * binary_to_uint - Write a function that converts a binary number
  * to an unsigned int.
  * @b: is the binary.
  *
