@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "main.h"
+#include "0-binary_to_uint.c"
 
 /**
  * get_bit - Write a function that returns the value
@@ -12,11 +13,13 @@
 
 int get_bit(unsigned long int n, unsigned int index)
 {
-	if ((n >> index) & 1)
-		return (1);
-	else
-		return (0);
-
+	if (index < 100)
+	{
+		if ((n >> index) & 1)
+			return (1);
+		else
+			return (0);
+	}
 	return (-1);
 }
 
