@@ -31,10 +31,10 @@ int main(int ac, char **av)
 	if (!buffer)
 		return (-1);
 	read(res, buffer, 1024);
-	write(res_1, buffer, 1024);
+	write(res_1, buffer, res);
 	if (res_1 == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[2]);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
 		exit(99);
 	}
 	cl = close(res);
