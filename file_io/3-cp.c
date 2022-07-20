@@ -12,7 +12,7 @@
  */
 int main(int ac, char **av)
 {
-	int res, res_1, cl, cl_1, bytes;
+	int res, res_1, wrt, cl, cl_1, bytes;
 	char *buffer;
 
 	if (ac != 3)
@@ -28,8 +28,8 @@ int main(int ac, char **av)
 		return (-1);
 	/*read the file*/
 	while ((bytes = read(res, buffer, sizeof(char))) > 0)
-		write(res_1, buffer, bytes);
-	if (res_1 == -1)
+		wrt = write(res_1, buffer, bytes);
+	if (res_1 == -1 || wrt == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
 		exit(99);
