@@ -22,7 +22,7 @@ int main(int ac, char **av)
 	}
 	/*open the files*/
 	res = open(av[1], O_RDONLY);
-	if (res == -1)
+	if (res == -1 || bytes == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
 		exit(98);
