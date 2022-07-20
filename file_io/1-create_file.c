@@ -20,9 +20,9 @@ int create_file(const char *filename, char *text_content)
 	aux = open(filename, O_WRONLY | O_CREAT | O_TRUNC, 0600);
 	if (aux == -1)
 		return (-1);
-	if (!text_content)
-		text_content = "";
-	while (*(text_content + 1))
+/*	if (!text_content)*/
+/*		text_content = "";*/
+	while (text_content && *(text_content + 1))
 	{
 		write(aux, text_content, 1);
 		text_content++;
