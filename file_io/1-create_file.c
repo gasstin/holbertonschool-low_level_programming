@@ -28,8 +28,6 @@ int create_file(const char *filename, char *text_content)
 			text_content++;
 		}
 	}
-	if ((write(aux, text_content, 1)) == -1)
-		return (-1);
 	close(aux);
 
 	return (1);
