@@ -31,7 +31,7 @@ int main(int ac, char **av)
 	if (!buffer)
 		return (-1);
 	read(res, buffer, 1024);
-	write(res_1, buffer, res);
+	write(res_1, buffer, 2875);
 	if (res_1 == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
