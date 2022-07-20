@@ -26,10 +26,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (!buff)
 		return (0);
 	n = read(aux, buff, letters);
-	
 	write(STDOUT_FILENO, buff, letters);
-	
-
 
 	close(aux);
 	free(buff);
