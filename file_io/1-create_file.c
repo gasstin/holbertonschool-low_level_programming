@@ -17,13 +17,16 @@ int create_file(const char *filename, char *text_content)
 
 	if (!filename)
 		return (-1);
-	aux = open(filename, O_WRONLY | O_CREAT | O_CREAT, 0600);
+	aux = open(filename, O_WRONLY | O_CREAT, 0600);
 	if (aux == -1)
 		return (-1);
 	if (!text_content)
 		text_content = "";
-	write(aux, text_content, strlen(text_content));
-
+	while (*text_content)
+	{
+		write(aux, text_content, 1);
+		text_content++;
+	}
 	close(aux);
 
 	return (1);
