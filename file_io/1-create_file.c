@@ -22,7 +22,7 @@ int create_file(const char *filename, char *text_content)
 		return (-1);
 	if (!text_content)
 		text_content = "";
-	while (*text_content)
+	while (*(text_content + 1))
 	{
 		write(aux, text_content, 1);
 		text_content++;
