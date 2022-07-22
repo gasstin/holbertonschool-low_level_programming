@@ -13,8 +13,7 @@
  */
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
-	dlistint_t *del = NULL, *aux = NULL;
-	unsigned int m = 0;
+	dlistint_t *del = NULL;
 
 	if (!*head)
 		return (-1);
@@ -28,20 +27,19 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	}
 	else
 	{
-		aux = *head;
-		while (m != index)
+		del = *head;
+		while (index)
 		{
-			aux = aux->next;
-			if (!aux)
+			del = del->next;
+			if (!del)
 				return (-1);
-			m++;
+			index--;
 		}
-		del = aux;
-		if (del->next) /* adelanto el puntero a index */
+		/* conecto los punteros in node index */
+		if (del->next)
 			del->next->prev = del->prev;
 		if (del->prev)
 			del->prev->next = del->next;
-		/* conect node */
 		/* delete node */
 		free(del);
 	}
