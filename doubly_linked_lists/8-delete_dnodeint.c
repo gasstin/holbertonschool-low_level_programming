@@ -33,16 +33,16 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 			m++;
 		}
 		del = aux;
-		if (del) /* adelanto el puntero a index */
+		if (del->next) /* adelanto el puntero a index */
 			del = del->next;
 		aux_1 = del;
-		if (aux_1)
+		if (aux_1->next)
 			aux_1 = aux_1->next;
-		free(del);
 		/* conect node */
 		aux_1->prev = aux;
 		aux->next = aux_1;
 		/* delete node */
+		free (del);
 	}
 	return (1);
 }
