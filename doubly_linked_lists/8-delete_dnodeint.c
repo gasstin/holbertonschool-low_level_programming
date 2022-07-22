@@ -56,12 +56,19 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
  */
 void delete_dnodeint(dlistint_t **head)
 {
-	dlistint_t *del = *head, *aux = *head;
+	dlistint_t *del = *head;
 
-	aux = aux->next;
-	free(del);
-	aux->prev = NULL;
-	*head = aux;
+	if (*head)
+	{
+		if ((*head)->next)
+		{
+			*head = (*head)->next;
+			(*head)->prev = NULL;
+			free(del);
+		}
+		else
+			free(head);
+	}
 }
 /**
  * delete_dnodeint_end - Write a function that deletes
@@ -74,12 +81,15 @@ void delete_dnodeint_end(dlistint_t **head)
 {
 	dlistint_t *del = *head, *aux = *head;
 
-	while (aux->next)
+	if (*head)
 	{
-		aux = aux->next;
-		del = del->next;
+		while (aux->next)
+		{
+			aux = aux->next;
+			del = del->next;
+		}
+		aux = aux->prev;
+		free(del);
+		aux->next = NULL;
 	}
-	aux = aux->prev;
-	free(del);
-	aux->next = NULL;
 }
