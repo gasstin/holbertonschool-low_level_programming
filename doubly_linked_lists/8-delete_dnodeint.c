@@ -13,19 +13,21 @@
  */
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
-	dlistint_t *del = *head, *aux = *head, *aux_1 = *head;
+	dlistint_t *del = NULL, *aux = NULL;
 	unsigned int m = 0;
 
 	if (!*head)
 		return (-1);
 	if (!index)
 	{
-		*head = (*head)->next;
+		del = *head;
+		*head = del->next;
 		free(del);
 	}
 	else
 	{
-		while (m != (index - 1))
+		aux = *head;
+		while (m != index)
 		{
 			aux = aux->next;
 			if (!aux)
@@ -34,31 +36,12 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 		}
 		del = aux;
 		if (del->next) /* adelanto el puntero a index */
-			del = del->next;
-		aux_1 = del;
-		if (aux_1->next)
-			aux_1 = aux_1->next;
+			del->next->prev = del->prev;
+		if (del->prev)
+			del->prev->next = del->next;
 		/* conect node */
-		aux_1->prev = aux;
-		aux->next = aux_1;
 		/* delete node */
-		free (del);
+		free(del);
 	}
 	return (1);
-}
-/**
- * delete_dnodeint - Write a function that deletes
- * the node at head.
- * @head: is the list of nodes.
- *
- * Return: always VOID.
- */
-void delete_dnodeint(dlistint_t **head)
-{
-
-	if (*head)
-	{
-		free(head);
-		*head = (*head)->next;
-	}
 }
