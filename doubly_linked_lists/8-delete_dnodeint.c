@@ -56,7 +56,7 @@ void delete_dnodeint(dlistint_t **head)
 
 	if (*head)
 	{
-		free(del);
 		*head = (*head)->next;
+		free(del);
 	}
 }
