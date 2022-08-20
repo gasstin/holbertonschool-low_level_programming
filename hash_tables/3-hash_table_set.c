@@ -38,6 +38,5 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	else
 		ht->array[hash_function] = new;
 	/*apunto la hash table al nuevo elemento*/
-	free(dup_value), free(dup_key);
 	return (1);
 }
