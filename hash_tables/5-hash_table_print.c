@@ -3,7 +3,7 @@
 /**
  * hash_table_print - Write a function that prints a hash table.
  * @ht: is the hash table.
-
+ *
  * Return: Always void.
  */
 
@@ -13,7 +13,7 @@ void hash_table_print(const hash_table_t *ht)
 	hash_node_t *p;
 	int n = 0;
 
-	if(!ht)
+	if (!ht)
 		return;
 	printf("{");
 	{
