@@ -32,7 +32,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	/*compruebo si ya hay otro elemento*/
 	if (ht->array[hash_function])
 	{
-		new->next = NULL; /*ht->array[hash_function]*/;
+		new->next = ht->array[hash_function];
 		ht->array[hash_function] = new;
 	}
 	else /*si esta vacio*/
