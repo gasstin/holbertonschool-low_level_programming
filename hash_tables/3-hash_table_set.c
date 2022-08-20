@@ -15,7 +15,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	char *dup_key = NULL, *dup_value = NULL;
 	hash_node_t *new = NULL;
 
-	if (!key || !value)
+	if (!ht || !key || !value)
 		return (0);
 	/*duplico value*/
 	dup_value = strdup(value);
@@ -32,12 +32,12 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	/*compruebo si ya hay otro elemento*/
 	if (ht->array[hash_function])
 	{
-		new->next = ht->array[hash_function];
+		new->next = NULL/*ht->array[hash_function]*/;
 		ht->array[hash_function] = new;
 	}
 	else
 		ht->array[hash_function] = new;
 	/*apunto la hash table al nuevo elemento*/
-
+	free(dup_value), free(dup_key);
 	return (1);
 }
