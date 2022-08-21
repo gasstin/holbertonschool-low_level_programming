@@ -19,10 +19,14 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	hash_function = key_index(key, ht->size);
 	if (ht->array[hash_function]) /*si existe una lista*/
 	{
+		while (ht->array[hash_function])
+		{
 		if (!strcmp(ht->array[hash_function]->key, key))
 			/*if find the key*/
 			return (ht->array[hash_function]->value);
-		else /*if not find the key*/
+		ht->array[hash_function] = ht->array[hash_function]->next;
+		}
+		/*if not find the key*/
 			return (NULL);
 	}
 	return (NULL);
