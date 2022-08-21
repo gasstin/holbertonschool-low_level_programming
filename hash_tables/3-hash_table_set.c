@@ -28,6 +28,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		{
 			free(ht->array[hash_function]->key);
 			free(ht->array[hash_function]->value);
+			free(ht->array[hash_function]);
 			ht->array[hash_function] = NULL;
 		}
 	}
