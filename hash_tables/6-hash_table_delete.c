@@ -2,21 +2,29 @@
 
 /**
  * hash_table_delete - Write a function that delete a hash table.
- *@ht: is the size of the array.
+ * @ht: is the hash table.
  *
- * Return: A pointer to the newly created table, or NULL it fall.
+ * Return: Always void.
  */
 
 void hash_table_delete(hash_table_t *ht)
 {
+	unsigned long int i = 0;
+	hash_node_t *p = NULL;
 
-	if (ht)
+	if (!ht)
+		return;
+	for (i = 0; i < ht->size; i++)
 	{
-		while(ht->array)
+		p = ht->array[i];
+		while (p)
 		{
-		free(ht->array);
-		ht = ht->array;
+			free(p->key), free(p->value);
+			free(p);
+			p = p->next;
 		}
-		free(ht);
+		free(p);
 	}
+	free(ht->array);
+	free(ht);
 }
