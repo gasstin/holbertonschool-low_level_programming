@@ -22,6 +22,11 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	dup_key = strdup(key);
 	/*uso hash function*/
 	hash_function = key_index(key, ht->size);
+	if (ht->array[hash_function])
+	{
+		if (!(strcmp(ht->array[hash_function]->key, dup_key)))
+			ht->array[hash_function] = NULL;
+	}
 
 	/*ubico el nuevo elemento*/
 	new = malloc(sizeof(hash_node_t));
@@ -31,15 +36,11 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	new->value = dup_value;
 	/*compruebo si ya hay otro elemento*/
 	if (ht->array[hash_function])
-	{
 		new->next = ht->array[hash_function];
-		ht->array[hash_function] = new;
-	}
 	else /*si esta vacio*/
-	{
-		ht->array[hash_function] = new;
 		new->next = NULL;
-	}
+	ht->array[hash_function] = new;
 	/*apunto la hash table al nuevo elemento*/
+
 	return (1);
 }

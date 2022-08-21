@@ -10,6 +10,7 @@
 hash_table_t *hash_table_create(unsigned long int size)
 {
 	hash_table_t *new_hash_table = NULL;
+	hash_node_t **node = NULL;
 
 	if (!size)
 		return (NULL);
@@ -19,9 +20,10 @@ hash_table_t *hash_table_create(unsigned long int size)
 		return (NULL);
 	/* then create the array       */
 	new_hash_table->size = size;
-	new_hash_table->array = malloc(size * sizeof(char *));
-	if (!new_hash_table->array)
+	node = malloc(size * sizeof(char *));
+	if (!node)
 		return (NULL);
-
+	new_hash_table->array = node;
+	
 	return (new_hash_table);
 }
