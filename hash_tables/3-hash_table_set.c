@@ -25,7 +25,11 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (ht->array[hash_function])
 	{
 		if (!(strcmp(ht->array[hash_function]->key, dup_key)))
+		{
+			free(ht->array[hash_function]->key);
+			free(ht->array[hash_function]->value);
 			ht->array[hash_function] = NULL;
+		}
 	}
 
 	/*ubico el nuevo elemento*/
