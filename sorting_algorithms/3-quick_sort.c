@@ -1,5 +1,4 @@
 #include "sort.h"
-#include <string.h>
 
 /**
  * main - Entry point
@@ -21,13 +20,22 @@ size_t quick_sort_aux(int *array, size_t size, size_t low, size_t sup)
 			aux = array[i];
 			array[i] = array[j];
 			array[j] = aux;
+			if (array[i] != array[j])
+			{
+			print_array(array, size);
+		/*	printf("swapeo elementos\n");*/
+			}		
 		}
 	}
-		print_array(array, size);	
 		aux = array[i + 1]; /*swap the pivot*/
 		array[i + 1] = pivot;
 		array[sup] = aux;
-	
+		if (pivot != array[sup])
+		{
+		print_array(array, size);
+		/*printf("swapeo pivot\n");*/
+		}
+
 	return (i + 1);
 }
 
