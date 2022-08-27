@@ -27,5 +27,6 @@ void quick_sort(int *array, size_t size);
 size_t quick_sort_aux(int *array, size_t size, size_t low, size_t sup);
 void quick_sort_suplente(int *array, size_t size, size_t low, size_t sup);
 void swap_nodes(listint_t *node_1, listint_t *node_2);
+void shell_sort(int *array, size_t size);
 
 #endif
